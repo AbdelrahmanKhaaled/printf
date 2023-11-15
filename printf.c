@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 			if (m[j].id[0] == format[i]
 			&& m[j].id[1] == format[i + 1])
 			{
-				len += m[j].fun(args);
+				len += m[j].fun();
 				i += 2;
 				break;
 			}

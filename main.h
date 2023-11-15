@@ -1,5 +1,5 @@
-#ifndef PRINTF_H
-#define PRINTF_H
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -17,7 +17,7 @@
 typedef struct format
 {
 	char *id;
-	int (*fun)(va_list);
+	int (*fun)();
 } match;
 
 int _putchar(char c);
