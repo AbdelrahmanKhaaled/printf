@@ -26,6 +26,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
+here:
 	while (format[i] == '\0')
 	{
 		j = 12;
@@ -36,7 +37,7 @@ int _printf(const char *format, ...)
 			{
 				len += m[j].fun();
 				i += 2;
-				break;
+				goto here;
 			}
 			j--;
 		}
