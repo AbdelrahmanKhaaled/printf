@@ -26,8 +26,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-here:
-	while (format[i] == '\0')
+	while (format[i] != '\0')
 	{
 		j = 12;
 		while (j >= 0)
@@ -35,11 +34,16 @@ here:
 			if (m[j].id[0] == format[i]
 			&& m[j].id[1] == format[i + 1])
 			{
-				len += m[j].fun();
+				len += m[j].fun(args);
 				i += 2;
-				goto here;
+				break;
 			}
 			j--;
+		}
+		if (format[i] == '%' && format[i + 1] == '%')
+		{
+			len += print_percentage();
+			i += 2;
 		}
 		_putchar(format[i]);
 		i++;
