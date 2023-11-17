@@ -11,9 +11,9 @@
 int main(void)
 {
 	int len, len2;
-	
-	len = _printf("%c", 'F');
-	len2 = printf("%c", 'F');
+
+	len = _printf("%b", 1024);
+	len2 = printf("10000000000");
 	fflush(stdout);
 	if (len != len2)
 	{

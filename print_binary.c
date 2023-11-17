@@ -5,7 +5,7 @@
  *
  * @args: checks input of function
  *
- * Return: returns length of binary number
+ * Return: returns length of binary number (Success)
 */
 
 int print_binary(va_list args)
