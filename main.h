@@ -21,6 +21,8 @@ typedef struct format
 } match;
 
 int _putchar(char c);
+int _strlen(char *str);
+int print_hex_help(unsigned long int number);
 
 int print_char(va_list args);
 int print_string(va_list args);
